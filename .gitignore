@@ -1,3 +1,5 @@
 */node_modules/
 *.env
 *.zip
+*/config.json
+config2.json

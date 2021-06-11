@@ -1,7 +1,7 @@
-const Customers = require("./src/models/Customers");
 const AWS = require('aws-sdk');
 AWS.config.update({ region: 'us-east-2'});
-const connection = require('./connection');
+const Customers = require("./models/Customers");
+const connection = require('./database/connection');
 
 
 
@@ -15,6 +15,7 @@ exports.handler = function(event, context, callback){
             }
         }).then(user => {
             callback(null, user);
+            
         }).catch (error => {
                 console.log("CONSOLE LOG")
                 callback(null,error)

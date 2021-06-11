@@ -2,7 +2,7 @@
 const AWS = require('aws-sdk');
 AWS.config.update({ region: 'us-east-2'});
 const Sequelize = require("sequelize");
-const connection = require('../../connection')
+const connection = require('../database/connection')
 
 module.exports = connection.define('customers', {
         id: {
