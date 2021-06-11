@@ -9,18 +9,12 @@ exports.handler = function(event, context, callback){
     
     connection.sync()
     .then(() => {
-        Customers.findAll({
+        Customers.findOne({
             where: {
-                Name: 'Loren'
+                id: event['customerId']
             }
         }).then(user => {
-
-            var response = {
-                "statusCode": 200,
-                "body": JSON.stringify(user),
-                "isBase64Encoded": false
-            };
-            callback(null, response);
+            callback(null, user);
         }).catch (error => {
                 console.log("CONSOLE LOG")
                 callback(null,error)
