@@ -20,14 +20,24 @@ const connection = new Sequelize(
             acquire: 30000,
             idle: 10000
         }
-    })
-    const Customers = connection.define('customers');
+})
+
+const Customers = connection.define('customers', {
+    id: {
+        type: Sequelize.INTEGER(),
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey:true
+    },
+
+    Name: Sequelize.STRING(),
+    createdAt: Sequelize.DATE,
+    updatedAt: Sequelize.DATE
+});
 
 
 
 exports.handler = function(event, context, callback){
-
-
     
     connection.sync()
     .then(() => {
@@ -48,5 +58,4 @@ exports.handler = function(event, context, callback){
                 callback(null,error)
         })
     })    
-
 }
