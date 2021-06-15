@@ -14,11 +14,11 @@ exports.handler = function(event, context, callback){
                 id: event['customerId']
             }
         }).then(user => {
-            callback(null, user);
-            
+                callback(null, user)
         }).catch (error => {
                 console.log("CONSOLE LOG")
                 callback(null,error)
         })
     })    
+
 }
