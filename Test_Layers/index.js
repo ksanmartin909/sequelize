@@ -1,7 +1,6 @@
-const AWS = require('aws-sdk');
-AWS.config.update({ region: 'us-east-2'});
-const Customers = require("./models/Customers");
-const connection = require('./database/connection');
+
+const connection = require('/opt/database/connection');
+const Customers = require('/opt/models/Customers');
 
 
 
@@ -20,5 +19,4 @@ exports.handler = function(event, context, callback){
                 callback(null,error)
         })
     })    
-
 }
