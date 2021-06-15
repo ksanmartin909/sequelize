@@ -1,6 +1,6 @@
 
-const Sequelize = require("./nodejs/node_modules/sequelize");
-const mysql2 = require('./nodejs/node_modules/mysql2');
+const Sequelize = require("../nodejs/node_modules/sequelize");
+const mysql2 = require('../nodejs/node_modules/mysql2');
 
 
 module.exports = new Sequelize(
