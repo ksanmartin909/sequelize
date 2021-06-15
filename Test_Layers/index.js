@@ -1,11 +1,13 @@
-const AWS = require('aws-sdk');
-AWS.config.update({ region: 'us-east-2'});
-const {number} = require('/opt/exportNumber');
+
+const connection = require('/opt/connection');
 
 
-exports.handler = function(event, context){
-    const num = number();
-    const name = event['name'];
-    callback(null, num)
-  
+
+exports.handler = function(event, context, callback){
+    
+    connection.sync()
+    .then(() => {
+       callback(null, "yes")
+    })    
+
 }
