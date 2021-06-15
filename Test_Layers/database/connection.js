@@ -1,12 +1,13 @@
 
 const Sequelize = require("../nodejs/node_modules/sequelize");
 const mysql2 = require('../nodejs/node_modules/mysql2');
+require('../nodejs/node_modules/dotenv').config();
 
 
 module.exports = new Sequelize(
     'SQLdatabase', 
     'admin',
-    'A3*w4N2p4**',
+    process.env.DB_PASSWORD,
     {
         host: 'sequelize-db3-instance-1.c3cqiki2awpm.us-east-2.rds.amazonaws.com',
         port:3306,
