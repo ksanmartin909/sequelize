@@ -10,7 +10,7 @@ exports.handler = function(event, context, callback){
     .then(() => {
 
         Planets.destroy(
-            { where:  { name: event['name'] }})
+            { where: { id: event['pathParameters']['id']}})
         .then(result => {
             
             if(result == 0){
