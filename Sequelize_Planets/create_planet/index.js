@@ -3,19 +3,32 @@ const Planets = require('/opt/models/Planets');
 
 
 exports.handler = function(event, context, callback){
-    var result={};
+    
+    context.callbackWaitsForEmptyEventLoop = false;
+    
     connection.sync()
     .then(() => {
 
         Planets.create({
-            name: event['name']
-
-        }).then(planet => {
-                callback(null, planet.dataValues);  
-
-        }).catch (error => {
-                result = error;
+            name: JSON.parse(event['body'])['name']
+        })
+        .then(planet => {
+            
+            const response = {
+                statusCode: 200,
+                  body: JSON.stringify(planet)
+            };
+            callback(null, response); 
+            
         });
+        
+    }).catch(error => {
+        
+        const response = {
+            statusCode: 400,
+              body: JSON.stringify(event)
+        };
+        callback(null,response);
+        
     });
-    
 };

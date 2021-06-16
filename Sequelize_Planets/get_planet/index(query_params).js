@@ -10,7 +10,7 @@ exports.handler = function(event, context, callback){
     .then(() => {
 
         Planets.findOne(
-            { where: { id: event['pathParameters']['id']}})
+            { where: { id: event['id']}})
         .then(planet => {
             callback(null, planet); 
         });

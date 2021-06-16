@@ -10,17 +10,33 @@ exports.handler = function(event, context, callback){
     .then(() => {
         
         Planets.update(
-            {name: event['name']}, 
-            {where: {id: event['id']}})
+            {name: JSON.parse(event['body'])['name']}, 
+            {where: {id: event['pathParameters']['id']}})
+            
         .then(result => {
             
+            var status = {};
+            
             if(result==0){
-                callback(null, {"status" : "Your planet could not be found."});
+                status = {"status" : "Your planet could not be found."};
             } else {
-                callback(null, {"status" : `Your planet has been renamed to ${event['name']} `});
+                status = {"status" : `Your planet has been renamed to ${JSON.parse(event['body'])['name']} `};
             }
+            
+            const response = {
+                statusCode: 200,
+                body: JSON.stringify(status)
+            };
+            callback(null, response);
+            
         });
-   
-    }).catch (error => callback(null, error));
-         
+    }).catch (error => {
+        
+            const response = {
+                statusCode: 400,
+                body: JSON.stringify(event)
+            };
+            callback(null, response);
+            
+        });
 };
