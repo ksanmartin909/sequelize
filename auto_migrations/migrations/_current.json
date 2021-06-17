@@ -1,0 +1,39 @@
+{
+    "tables": {
+        "Fishes": {
+            "tableName": "Fishes",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "color": {
+                    "field": "color",
+                    "seqType": "Sequelize.STRING"
+                },
+                "fins": {
+                    "field": "fins",
+                    "seqType": "Sequelize.STRING"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "path": "D:\\FILAMENT_GAMES\\Repositories\\Sequelize_Test2\\auto_migrations\\migrations\\_current.json",
+    "backupPath": "D:\\FILAMENT_GAMES\\Repositories\\Sequelize_Test2\\auto_migrations\\migrations\\_current_bak.json",
+    "exists": true,
+    "revision": 2
+}

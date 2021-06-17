@@ -1,0 +1,8 @@
+{
+  "development": {
+    "username": "admin",
+    "password": "A3*w4N2p4**",
+    "database": "SQLdatabase",
+    "host": "sequelize-db3-instance-1.c3cqiki2awpm.us-east-2.rds.amazonaws.com",
+    "dialect": "mysql2"
+  }

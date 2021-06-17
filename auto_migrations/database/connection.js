@@ -1,7 +1,6 @@
 
-const Sequelize = require("../nodejs/node_modules/sequelize");
-const mysql = require('../nodejs/node_modules/mysql2');
-require('../nodejs/node_modules/dotenv').config();
+const Sequelize = require("sequelize");
+require('dotenv').config();
 
 
 module.exports = new Sequelize(
