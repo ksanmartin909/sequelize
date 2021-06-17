@@ -18,12 +18,8 @@
                     "field": "fins",
                     "seqType": "Sequelize.STRING"
                 },
-                "prey": {
-                    "field": "prey",
-                    "seqType": "Sequelize.STRING"
-                },
-                "gills": {
-                    "field": "gills",
+                "pod_size": {
+                    "field": "pod_size",
                     "seqType": "Sequelize.INTEGER"
                 },
                 "createdAt": {
@@ -40,5 +36,5 @@
             "indexes": []
         }
     },
-    "revision": 4
+    "revision": 7
 }

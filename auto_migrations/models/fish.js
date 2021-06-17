@@ -1,7 +1,7 @@
 'use strict';
 const {
   Model
-} = require('sequelize');
+} = require('../nodejs/node_modules/sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Fish extends Model {
     /**
@@ -16,7 +16,6 @@ module.exports = (sequelize, DataTypes) => {
   Fish.init({
     color: DataTypes.STRING,
     fins: DataTypes.STRING,
-    prey: DataTypes.STRING,
   }, {
     sequelize,
     tableName:'Fishes',

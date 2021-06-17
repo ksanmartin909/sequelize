@@ -1,7 +1,7 @@
 
-const connection = require('./database/connection');
+const connection = require('/opt/database/connection');
 const Sequelize = require('sequelize');
-const Model = require('./models/fish')
+const Model = require('/opt/models/fish')
 const Fish = Model(connection,Sequelize)
 
 exports.handler = function(event, context, callback){

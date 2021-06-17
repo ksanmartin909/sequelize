@@ -1,6 +1,6 @@
 'use strict';
 
-var Sequelize = require('sequelize');
+var Sequelize = require('../nodejs/node_modules/sequelize');
 
 /**
  * Actions summary:

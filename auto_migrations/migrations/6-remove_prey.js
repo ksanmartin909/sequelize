@@ -1,31 +1,24 @@
 'use strict';
 
-var Sequelize = require('../nodejs/node_modules/sequelize');
+var Sequelize = require('sequelize');
 
 /**
  * Actions summary:
  *
- * addColumn "age" to table "Fishes"
+ * removeColumn "prey" from table "Fishes"
  *
  **/
 
 var info = {
-    "revision": 2,
-    "name": "add_age",
-    "created": "2021-06-17T17:13:43.640Z",
+    "revision": 6,
+    "name": "remove_prey",
+    "created": "2021-06-17T18:47:21.527Z",
     "comment": ""
 };
 
 var migrationCommands = [{
-    fn: "addColumn",
-    params: [
-        "Fishes",
-        "age",
-        {
-            "type": Sequelize.INTEGER,
-            "field": "age"
-        }
-    ]
+    fn: "removeColumn",
+    params: ["Fishes", "prey"]
 }];
 
 module.exports = {
