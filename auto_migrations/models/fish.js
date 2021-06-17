@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   Fish.init({
     color: DataTypes.STRING,
     fins: DataTypes.STRING,
+    prey: DataTypes.STRING,
   }, {
     sequelize,
     tableName:'Fishes',

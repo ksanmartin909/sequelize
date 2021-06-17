@@ -18,6 +18,10 @@
                     "field": "fins",
                     "seqType": "Sequelize.STRING"
                 },
+                "prey": {
+                    "field": "prey",
+                    "seqType": "Sequelize.STRING"
+                },
                 "createdAt": {
                     "allowNull": false,
                     "field": "createdAt",
@@ -32,8 +36,5 @@
             "indexes": []
         }
     },
-    "path": "D:\\FILAMENT_GAMES\\Repositories\\Sequelize_Test2\\auto_migrations\\migrations\\_current.json",
-    "backupPath": "D:\\FILAMENT_GAMES\\Repositories\\Sequelize_Test2\\auto_migrations\\migrations\\_current_bak.json",
-    "exists": true,
-    "revision": 2
+    "revision": 5
 }

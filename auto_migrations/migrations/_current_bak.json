@@ -14,6 +14,18 @@
                     "field": "color",
                     "seqType": "Sequelize.STRING"
                 },
+                "fins": {
+                    "field": "fins",
+                    "seqType": "Sequelize.STRING"
+                },
+                "prey": {
+                    "field": "prey",
+                    "seqType": "Sequelize.STRING"
+                },
+                "gills": {
+                    "field": "gills",
+                    "seqType": "Sequelize.INTEGER"
+                },
                 "createdAt": {
                     "allowNull": false,
                     "field": "createdAt",
@@ -28,8 +40,5 @@
             "indexes": []
         }
     },
-    "path": "D:\\FILAMENT_GAMES\\Repositories\\Sequelize_Test2\\auto_migrations\\migrations\\_current.json",
-    "backupPath": "D:\\FILAMENT_GAMES\\Repositories\\Sequelize_Test2\\auto_migrations\\migrations\\_current_bak.json",
-    "exists": false,
-    "revision": 1
+    "revision": 4
 }
