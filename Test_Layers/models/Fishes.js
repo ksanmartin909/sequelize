@@ -5,7 +5,8 @@ const Sequelize = require('../nodejs/node_modules/sequelize');
 const connection = require('../database/connection');
 
 
-module.exports = connection.define('customers', {
+
+module.exports = connection.define('Fishes', {
         id: {
             type: Sequelize.INTEGER(),
             allowNull: false,
@@ -13,7 +14,9 @@ module.exports = connection.define('customers', {
             primaryKey:true
         },
     
-        Name: Sequelize.STRING(),
+        name: Sequelize.STRING(),
+        fins: Sequelize.INTEGER(),
+        prey: Sequelize.STRING(),
         createdAt: Sequelize.DATE,
         updatedAt: Sequelize.DATE
 

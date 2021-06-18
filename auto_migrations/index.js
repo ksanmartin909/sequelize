@@ -1,16 +1,17 @@
 
-const connection = require('/opt/database/connection');
-const Fishes = require('/opt/models/Fishes');
-
-
+const connection = require('./database/connection');
+const Sequelize = require('sequelize');
+const Model = require('./models/fish')
+const Fish = Model(connection,Sequelize)
 
 exports.handler = function(event, context, callback){
     
-    connection.sync()
+    connection.sync({alter:true})
     .then(() => {
-        Fishes.findOne({
+        
+        Fish.findOne({
             where: {
-                id: event['fish']
+                id: event['id']
             }
         }).then(user => {
                 callback(null, user)
