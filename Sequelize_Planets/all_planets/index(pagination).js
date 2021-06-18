@@ -6,13 +6,15 @@ exports.handler = function(event, context, callback){
 
     context.callbackWaitsForEmptyEventLoop = false;
     
-    const page= parseInt(event['page']);
-    const size = parseInt(event['size']);
+    
+    const page = isNaN(event['page'])? 0 : parseInt(event['page'])
+    const size = isNaN(event['size'])? 0 : parseInt(event['size'])
     
     connection.sync()
     .then(() => {
      
-        Planets.findAndCountAll({
+        // Planets.findAndCountAll({
+        Planets.findAll({
             
             limit: size,
             offset:page * size
